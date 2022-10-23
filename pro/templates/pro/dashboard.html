@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h1>User databoard:</h1>
+    <br>
+    <a href="{% url 'users' %}" class="btn btn-primary btn-block">Show All Users</a>
+    <br><br>
+   <p>User name: {{request.user.username}}</p>
+   <p>First name: {{request.user.first_name}}</p>
+   <p>Last name: {{request.user.last_name}}</p>
+   <p>Email:  {{request.user.email}}</p>
+   <p>Profile pic: <img src="../../media/{{request.user.user_profile}}" height="80px"></p>
+</div>
+{% endblock  %}

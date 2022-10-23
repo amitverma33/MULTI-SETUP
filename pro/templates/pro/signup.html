@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='container'>
+<br>
+<br>
+<h1 class='text-primary'>Signup To use our services....!</h1>
+<br>
+{% for message in messages %}
+<div class='col-md-10'>
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>Hello sir..,</strong> {{message}}
+    <button type="button" class="close align-self-end" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+{% endfor %}
+<br>
+<form method='POST' enctype='multipart/form-data'>
+    {% csrf_token %}
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" name='username' id="staticEmail" placeholder='Enter a unique username' required>
+      </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">First Name</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name='fname' id="staticEmail" placeholder='Enter first name' required>
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Last Name</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name='lname' id="staticEmail" placeholder='Enter Last name' required>
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name='email' id="staticEmail" placeholder='Enter email' required>
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-8">
+        <input type="password" class="form-control" name='pass1' id="inputPassword" placeholder="Password" required>
+      </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+        <div class="col-sm-8">
+          <input type="password" class="form-control" name='pass2' id="inputPassword" placeholder="Confirm Password" required>
+        </div>
+      </div>
+      <br>
+      <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Profile Image</label>
+        <div class="col-sm-8">
+          <input type="file" name='pic' required>
+        </div>
+    </div>
+    <br>
+    <input type='submit' class='btn btn-success btn-block' value='SIGNUP'>
+  </form>
+  <br>
+<br>
+<br>
+<br>
+</div>
+{% endblock  %}
